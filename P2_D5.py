@@ -10,13 +10,16 @@ Write a Python program that reads a text file called "data.txt" and counts the n
 '''
 
 
+file_path = 'data.txt'
+
 try:
-    with open(r'C:\Users\aleen\Desktop\data.txt','r') as file:
-        lines = file.readlines()
-        length = len(lines)
+    with open(file_path,'r') as file:
+        lines = file.readlines() #read the number of lines in the file
+        length = len(lines) 
         print(f"Number of lines in the file is {length}")
+        
 except FileNotFoundError:
-    print("File not found")
+    print(f"{file_path} not found")    
     
     
         
