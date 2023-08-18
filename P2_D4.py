@@ -12,13 +12,18 @@ Implement the __eq__ method to compare two Point objects for equality based on t
 
 
 class Point:
+    '''Represents a point in 2D space.'''
+    
     def __init__(self,x,y):
         self.x=x
         self.y=y
         
     def __eq__(self,other):
-        return self.x == other.x and self.y == other.y
-    
+        '''Compares two point objects for equality based on their coordinates.'''
+        
+        if isinstance(other, Point):
+            return self.x == other.x and self.y == other.y
+        return False
  
 point_1= Point(1,2)
 point_2= Point(3,4)
