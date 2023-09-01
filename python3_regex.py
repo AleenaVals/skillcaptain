@@ -19,20 +19,19 @@ def check_password_strength(password):
 
     for key, pattern in criteria.items():
         if re.search(pattern, password):
-            score += 2
+            score= score+1
             met_criteria.append(key)
 
-    print(f"Your password score is: {score}/10")
+    print(f"Your password score is: {score}/5")
 
-    if score <= 4:
+    if score <= 2:
         print("The password is weak. Please ensure that it meets all the criteria.")
-    elif score > 5 and score < 10:
+    elif score > 2 and score < 5:
         print("The password is medium strength. Please check if it has met all the criteria.")
     else:
         print("The password is strong.")        
         
-    print()
-    
+    print()    
     if len(met_criteria) < len(criteria):
         print("The password does not meet the following conditions:")
         for key in criteria.keys():
